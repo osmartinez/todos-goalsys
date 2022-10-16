@@ -2,7 +2,7 @@
     <div id="todo-list">
         <TodoHeader @click="add"></TodoHeader>
         <RouterView />
-        <TodoFooter></TodoFooter>
+        <TodoFooter v-show="store.countTodos"></TodoFooter>
     </div>
 </template>
 
