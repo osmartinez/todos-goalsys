@@ -1,5 +1,5 @@
 <template>
-    <div id="list-footer">
+    <div id="todo-footer">
       <span><strong>0</strong> items left</span>
   
       <div class="filter-group">
