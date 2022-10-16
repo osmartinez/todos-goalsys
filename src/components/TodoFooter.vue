@@ -6,7 +6,7 @@
         <RouterLink class="filter" v-for="route in routes" v-bind:key="route.name" :to="route">{{route.text}}</RouterLink>
       </div>
   
-      <button :disabled="store.countCompletedTodos === 0">Clear completed</button>
+      <button :disabled="store.countCompletedTodos === 0" @click="store.clearCompleted()">Clear completed</button>
     </div>
   </template>
   
