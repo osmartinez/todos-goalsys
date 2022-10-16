@@ -5,10 +5,19 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      //component: () => import('')
+      name: 'allTodos',
+      component: () => import('../views/TodosAll.vue')
     },
-
+    {
+      path: '/active',
+      name: 'activeTodos',
+      component: () => import('../views/TodosActive.vue')
+    },
+    {
+      path: '/completed',
+      name: 'completedTodos',
+      component: () => import('../views/TodosCompleted.vue')
+    }
   ]
 })
 
