@@ -1,9 +1,9 @@
 <template>
-    <div v-if="todo" class="todo">
-        <input class="toggle" type="checkbox" v-model="todo.completed">
-        <label class="todo-name">{{todo.name}}</label>
+    <div v-if="todo" class="todo" @dblclick="openEditMode">
+        <input v-show="!editMode" class="toggle" type="checkbox" v-model="todo.completed">
+        <label v-show="!editMode" class="todo-name">{{todo.name}}</label>
         <input v-show="editMode" class="edit" type="text">
-        <button class="btn-delete">x</button>
+        <button v-show="!editMode" class="btn-delete">x</button>
     </div>
 </template>
 
@@ -14,7 +14,9 @@ const props = defineProps({
 })
 const editMode = ref(false)
 
-
+function openEditMode(){
+    editMode.value = true
+}
 </script>
 
 <style scoped>

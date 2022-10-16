@@ -51,4 +51,14 @@ describe('Todo', () => {
         cy.get('.edit')
             .should('be.not.visible')
     })
+
+    it('shows editable input when double click is done',()=>{
+        cy.mount(Todo,{ props: { todo: completedTodo } })
+        cy.get('.todo')
+        .dblclick()
+    
+        cy.get('.edit')
+        .should('be.visible')
+        
+      })
 })
