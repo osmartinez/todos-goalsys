@@ -47,7 +47,7 @@ describe('Some e2e tests', () => {
 
   it('hides footer when there are no todos', () => {
     cy.visit('/')
-    cy.get('.todo-footer')
+    cy.get('#todo-footer')
       .should('not.be.visible')
   })
 
@@ -56,7 +56,7 @@ describe('Some e2e tests', () => {
     cy.visit('/')
     addTask('#todo 1')
 
-    cy.get('.todo-footer')
+    cy.get('#todo-footer')
       .should('not.be.visible')
   })
 
@@ -64,7 +64,7 @@ describe('Some e2e tests', () => {
     cy.visit('/')
     addTask('#todo 1')
 
-    cy.get('.todo-footer > button')
+    cy.get('#todo-footer > button')
       .should('be.disabled')
   })
 
