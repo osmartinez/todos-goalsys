@@ -1,12 +1,12 @@
 
 <template>
     <div>
-      <TodoBody :items="store.allTodos"></TodoBody>
+      <TodoList :items="store.allTodos"></TodoList>
     </div>
   </template>
   <script setup>
   import { useTodosStore } from '../stores/todos'
-import TodoBody from '../components/TodoBody.vue';
+  import TodoList from '../components/TodoList.vue';
   const store = useTodosStore()
   </script>
   
