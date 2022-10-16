@@ -1,11 +1,11 @@
 <template>
     <div>
-      <TodoList :items="store.activeTodos"></TodoList>
+      <TodoBody :items="store.activeTodos"></TodoBody>
     </div>
   </template>
   <script setup>
   import { useTodosStore } from '../stores/todos'
-  import TodoList from '../components/TodoList.vue';
+  import TodoBody from '../components/TodoBody.vue';
   const store = useTodosStore()
   </script>
   
