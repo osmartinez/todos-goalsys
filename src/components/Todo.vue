@@ -2,7 +2,7 @@
     <div v-if="todo" class="todo" @dblclick="openEditMode">
         <input v-show="!editMode" class="toggle" type="checkbox" v-model="todo.completed">
         <label v-show="!editMode" class="todo-name">{{todo.name}}</label>
-        <input v-show="editMode" class="edit" type="text">
+        <input v-show="editMode" class="edit" type="text" @keyup.enter="closeEditModeAndSave" @blur="closeEditModeAndSave" @keyup.esc="closeEditModeAndDiscard">
         <button v-show="!editMode" class="btn-delete">x</button>
     </div>
 </template>
@@ -13,6 +13,14 @@ const props = defineProps({
     todo: Object,
 })
 const editMode = ref(false)
+
+async function closeEditModeAndSave(){    
+    editMode.value = false
+}
+
+function closeEditModeAndDiscard(){
+    editMode.value = false
+}
 
 function openEditMode(){
     editMode.value = true

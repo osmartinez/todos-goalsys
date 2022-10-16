@@ -61,4 +61,23 @@ describe('Todo', () => {
         .should('be.visible')
         
       })
+
+      it('hides editable when enter or esc is pressed',()=>{
+        cy.mount(Todo,{ props: { todo: completedTodo } })
+        cy.get('.todo')
+        .dblclick()
+    
+        cy.get('.edit')
+        .should('be.visible')
+        .type('{enter}')
+        .should('not.be.visible')
+    
+        cy.get('.todo')
+        .dblclick()
+    
+        cy.get('.edit')
+        .should('be.visible')
+        .type('{esc}')
+        .should('not.be.visible')
+      })
 })
