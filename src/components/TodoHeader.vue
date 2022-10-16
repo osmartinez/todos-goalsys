@@ -11,12 +11,11 @@ import { ref } from 'vue'
 import { useTodosStore } from '../stores/todos'
 
 const store = useTodosStore()
-const emit = defineEmits(['click'])
 const checkAll = ref(false)
 let userInput = ref("")
-function action() {
+async function action() {
     if (!userInput.value) return
-    emit('click', userInput.value)
+    await store.add({ name: userInput.value, completed: false})
     userInput.value = ''
 }
 async function checkAllChanged() {
