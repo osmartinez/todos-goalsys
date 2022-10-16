@@ -15,3 +15,24 @@
   const routes = [{ name: 'allTodos', text: 'all' }, { name: 'activeTodos', text: 'active' }, { name: 'completedTodos', text: 'completed' }]
   const store = useTodosStore()
   </script>
+
+<style scoped>
+#todo-footer {
+  color: gray;
+  border-top: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter {
+  margin-left: 2rem;
+}
+
+a{
+  text-decoration: none;
+}
+
+.router-link-exact-active {
+   font-weight: bold;
+ }
+</style>
