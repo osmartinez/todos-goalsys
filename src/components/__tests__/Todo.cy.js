@@ -19,5 +19,12 @@ describe('Todo', () => {
         cy.get('.toggle')
         .should('be.not.checked')
       })
+
+      it('has checkbox checked because todo is completed', ()=>{
+        cy.mount(Todo,{ props: { todo: completedTodo } })
+        cy.get('.toggle')
+        .should('be.checked')
+      })
+    
     
 })
