@@ -2,11 +2,39 @@
     <div v-if="todo" class="todo">
         <input class="toggle" type="checkbox" v-model="todo.completed">
         <label class="todo-name">{{todo.name}}</label>
+        <button class="btn-delete">x</button>
     </div>
 </template>
 
 <script setup>
+
 const props = defineProps({
     todo: Object,
 })
+
 </script>
+
+<style scoped>
+.btn-delete{
+    cursor:pointer;
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 10px;
+	bottom: 0;
+	width: 40px;
+	height: 40px;
+	margin: auto 0;
+	color: white;
+    background:red;
+
+}
+
+.btn-delete:hover {
+	background: darkred;
+}
+
+.task:hover .btn-delete {
+	display: block;
+}
+</style>

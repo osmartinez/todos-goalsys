@@ -25,6 +25,12 @@ describe('Todo', () => {
         cy.get('.toggle')
         .should('be.checked')
       })
+
+      it('has button hidden by default', ()=>{
+        cy.mount(Todo,{ props: { todo: completedTodo } })
+        cy.get('.btn-delete')
+        .should('be.not.visible')
+      })
     
     
 })
