@@ -28,6 +28,7 @@ describe('Some e2e tests', () => {
     cy.visit('/')
 
     addTask('#todo 1')
+    cy.wait(500)
     addTask('#todo 2')
 
     // there are 2 tasks
