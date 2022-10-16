@@ -1,5 +1,5 @@
 <template>
-    <div id="list-header">
+    <div id="todo-header">
         <input class="user-input" type="text" v-model="userInput" @keyup.enter="action"
             placeholder="Type and press enter" autofocus>
     </div>
