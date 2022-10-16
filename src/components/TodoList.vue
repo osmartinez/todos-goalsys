@@ -7,10 +7,12 @@
 </template>
 
 <script setup>
+import { useTodosStore } from '../stores/todos'
+
 import TodoHeader from './TodoHeader.vue'
 import TodoFooter from './TodoFooter.vue';
-const list = useListStore()
-function add(userInput) {
-    
+const store = useTodosStore()
+async function add(userInput) {
+    await store.add({ name: userInput, completed: false, active: false })
 }
 </script>
