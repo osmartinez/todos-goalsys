@@ -3,7 +3,7 @@
         <input v-show="!editMode" class="toggle" type="checkbox" v-model="todo.completed" @change="updateModel">
         <label v-show="!editMode" class="todo-name">{{todo.name}}</label>
         <input v-show="editMode" class="edit" type="text" v-model="newItemName" @keyup.enter="closeEditModeAndSave" @blur="closeEditModeAndSave" @keyup.esc="closeEditModeAndDiscard">
-        <button v-show="!editMode" @click="list.delete(item)" class="btn-delete">x</button>
+        <button v-show="!editMode" @click="store.delete(item)" class="btn-delete">x</button>
     </div>
 </template>
 
