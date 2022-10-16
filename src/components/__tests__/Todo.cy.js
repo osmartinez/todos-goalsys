@@ -32,5 +32,16 @@ describe('Todo', () => {
         .should('be.not.visible')
       })
     
-    
+      /**
+   * This cannot be tested with current cypress api because of css:hover cannot be triggered via js
+   */
+//   it('has button visible if mouse is over', ()=>{
+//     cy.mount(Task,{ props: { item: completedTask } })
+//     cy.get('.title')
+//     .trigger('mouseover')
+
+//     cy.get('.btn-delete')
+//     .should('be.visible')
+//   })
+
 })
