@@ -1,6 +1,6 @@
 <template>
     <div>
-      <TodoList :items="store.completedTodos"></TodoList>
+      <TodoList :todos="store.completedTodos"></TodoList>
     </div>
   </template>
   <script setup>

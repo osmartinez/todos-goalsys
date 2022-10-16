@@ -1,7 +1,7 @@
 
 <template>
     <div>
-      <TodoList :items="store.allTodos"></TodoList>
+      <TodoList :todos="store.allTodos"></TodoList>
     </div>
   </template>
   <script setup>
