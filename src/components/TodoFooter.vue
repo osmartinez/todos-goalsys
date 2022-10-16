@@ -1,6 +1,6 @@
 <template>
     <div id="todo-footer">
-      <span><strong>0</strong> items left</span>
+      <span><strong>{{store.countNonCompletedTodos}}</strong>{{store.countNonCompletedTodos===1?'item':'items'}} left</span>
   
       <div class="filter-group">
         <RouterLink class="filter" v-for="route in routes" v-bind:key="route.name" :to="route">{{route.text}}</RouterLink>
